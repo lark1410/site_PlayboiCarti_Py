@@ -1,0 +1,69 @@
+body{
+  margin: 0;
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.whatsonthestar.com%2Fuploads%2F1741025797573.jpeg&f=1&nofb=1&ipt=16ddbf76bcbbac43f75ebd58d1c7b9c00d905dc2ecb32f92f5393279825025b1"); 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+h1{
+  margin: 50px;
+  font-family:Times;
+  color: white;
+  text-shadow: 0 0 20px #D12600;
+  font-size: 110px;
+  text-align: center;
+}
+
+a{
+ text-decoration-color: white;
+ text-shadow: 0 0 30px red; 
+}
+
+h2{
+  color: white;
+  text-shadow: 0 0 30px red;
+  font-size: 50px;
+}
+
+.navig{
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+}
+
+.suite{
+  text-align: right;
+}
+
+.retour{
+  text-align: left;
+}
+
+p{
+  color: white;
+  text-shadow: 0 0 10px white;
+  font-size: 20px;
+}
+
+nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #333;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
