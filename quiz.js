@@ -23,6 +23,8 @@ function calculerScore() {
     score += parseInt(q1.value);
     score += parseInt(q2.value);
     score += parseInt(q3.value);
+    score += parseInt(q4.value);
+    score += parseInt(q5.value);
 
     
     let pourcentage = Math.round((score / scoreMaxPossible) * 100);
