@@ -230,7 +230,7 @@ nav a {
     <h1> ALBUMS</h1>
     <a href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.tenor.com%2F1aFbnAIg-n8AAAAM%2Fwake-up-first-day.gif&f=1&nofb=1&ipt=930246de7f6a9ce33772a8cb289f7130fb6a22ab72357d72f60a4444084109ce" class="easteregg-évidemment-en-lien-avec-Playboi-Carti">EASTER EGG</a>
 <div class="toute-cartes">
-<div class="CARTE">
+<div class="CARTE" data-album="1">
     <div class="carte">
 
         <div class="carte-interieur">
@@ -249,7 +249,7 @@ nav a {
 </div>
 
 
-<div class="CARTE">
+<div class="CARTE" data-album="2">
     <div class="carte">
 
         <div class="carte-interieur">
@@ -268,7 +268,7 @@ nav a {
 </div>
 
 
-<div class="CARTE">
+<div class="CARTE" data-album="3">
     <div class="carte">
 
         <div class="carte-interieur">
@@ -287,7 +287,7 @@ nav a {
 </div>
 
 
-<div class="CARTE">
+<div class="CARTE" data-album="4">
     <div class="carte">
 
         <div class="carte-interieur">
@@ -322,6 +322,25 @@ nav a {
 </div>
     
 
+<audio id="audio-album1" src="lien_vers_musique_album1.mp3" preload="auto"></audio>
+<audio id="audio-album2" src="lien_vers_musique_album2.mp3" preload="auto"></audio>
+<audio id="audio-album3" src="lien_vers_musique_album3.mp3" preload="auto"></audio>
+<audio id="audio-album4" src="lien_vers_musique_album4.mp3" preload="auto"></audio>
+
+<script>
+    const cartes = document.querySelectorAll('.CARTE');
+    cartes.forEach(carte => {
+      const albumId = carte.getAttribute('data-album');
+      const audio = document.getElementById(`audio-album${albumId}`);
+      if (audio) {
+        carte.addEventListener('mouseenter', () => {
+          audio.currentTime = 0;
+          audio.play().catch(e => console.log(e));
+        });
+      }
+    });
+  </script>
+    
   </body>
 
 </html>
