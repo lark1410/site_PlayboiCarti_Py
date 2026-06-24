@@ -37,13 +37,13 @@ function calculerScore() {
     if (pourcentage === 100) {
         message = "Tu es littéralement Playboi Carti. FÆHH ! 🧛💋";
     } else if (pourcentage >= 50) {
-        message = "Tu est déjà encré dans le style vamp mais continue encore sur ce chemin!!";
+        message = "Tu est déjà ancré dans le style vamp mais continue encore sur ce chemin!!";
     } else if (pourcentage >=70) {
        message = "Tu as le style, tu as le flow. Un vrai soldat d'Opium! Il ne te manque plus grand chose pour atteindre ton paroxysme vamp"
      } else if (pourcentage >=25) {
        message ="Tu n'es pas encore assez branché!!"
     } else {
-        message = "Tu es un random. Va écouter du Taylor Swift.";
+        message = "Tu es un random bro. Va écouter du Taylor Swift.";
     }
     
     document.getElementById('phrase-custom').innerText = message;
