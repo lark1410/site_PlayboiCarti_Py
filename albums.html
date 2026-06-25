@@ -86,17 +86,39 @@ h1{
   justify-items: center;
 }
 
-.retour{
-  text-align: left;
+.navig {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
 }
 
-.navig{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.btn-navig {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Times', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #0d0d0d;
+  border: 2px solid #D12600;
+  padding: 12px 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(209, 38, 0, 0.2);
+  transition: all 0.4s ease;
 }
 
-.suite{
-  text-align: right;
+.btn-navig:hover {
+  background-color: #D12600;
+  color: black;
+  box-shadow: 0 0 25px #D12600;
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+
+.btn-navig:active {
+  transform: translateY(1px);
 }
 
 h2{
@@ -110,10 +132,6 @@ a{
   color: white;
 }
 
-.text-navig{
-  text-shadow: 0 0 30px red;
-  font-size: 50px;
-}
 
 .easteregg-évidemment-en-lien-avec-Playboi-Carti{
   color: transparent;
@@ -196,18 +214,23 @@ nav a {
 
   
    .navig {
-    display: grid !important;
+    display: flex !important;
     justify-content: space-between !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    padding: 0 20px !important;
+    padding: 0 15px !important;
     gap: 10px !important;
+    margin: 30px auto !important;
   }
   
-  .text-navig {
-    font-size: 20px !important;
+  .btn-navig {
+    font-size: 15px !important;
+    padding: 10px 20px !important;
+    flex: 1;
+    text-align: center;
   }
+
 
   nav a {
     font-size: 13px !important;
