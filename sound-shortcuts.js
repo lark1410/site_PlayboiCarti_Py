@@ -3,16 +3,16 @@ window.addEventListener('keydown', (event) => {
 
   if (touche === 'c') {
     const CARTII = document.getElementById('audio-album1');
-    if (CARTII) { audioBih.currentTime = 0; audioBih.play().catch(e => {}); }
+    if (CARTII) { CARTII.currentTime = 0; CARTII.play().catch(e => {}); }
   } 
   
   else if (touche === 'f') {
     const what = document.getElementById('audio-album2');
-    if (what) { audioFaeh.currentTime = 0; audioFaeh.play().catch(e => {}); }
+    if (what) { what.currentTime = 0; what.play().catch(e => {}); }
   } 
   
   else if (touche === 's') {
     const seyuh = document.getElementById('audio-album3');
-    if (seyuh) { audioSheeyah.currentTime = 0; audioSheeyah.play().catch(e => {}); }
+    if (seyuh) { seyuh.currentTime = 0; seyuh.play().catch(e => {}); }
   }
 });
