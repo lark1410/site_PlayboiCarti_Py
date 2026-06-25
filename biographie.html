@@ -35,17 +35,43 @@ h2{
   font-size: 50px;
 }
 
-.navig{
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
+
+.navig {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 50px auto; 
+  padding: 0 20px;
 }
 
-.suite{
-  text-align: right;
+
+.btn-navig {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Times', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #0d0d0d; 
+  border: 2px solid #D12600; 
+  padding: 12px 30px;
+  border-radius: 5px; 
+  box-shadow: 0 0 10px rgba(209, 38, 0, 0.2); 
+  transition: all 0.4s ease;
 }
 
-.retour{
-  text-align: left;
+
+.btn-navig:hover {
+  background-color: #D12600; 
+  color: black;
+  box-shadow: 0 0 25px #D12600;
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+
+
+.btn-navig:active {
+  transform: translateY(1px);
 }
 
 p{
@@ -112,19 +138,23 @@ nav a {
   nav ul {
     gap: 15px !important;
   }
-
+    
   .navig {
-    display: grid !important;
+    display: flex !important;
     justify-content: space-between !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    padding: 0 20px !important;
+    padding: 0 15px !important; 
     gap: 10px !important;
+    margin: 30px auto !important;
   }
-    
-  .text-navig {
-    font-size: 20px !important; 
+  
+  .btn-navig {
+    font-size: 15px !important; 
+    padding: 10px 20px !important; 
+    flex: 1; 
+    text-align: center;
   }
 }  
   </style>
@@ -152,17 +182,10 @@ nav a {
   <h2> Quel style artistique?</h2>
   <p>Reconnu pour son flow atypique, son utilisation de la voix <br/> comme instrument et son esthétique influencée par la mode <br/> et le punk, il s’impose aujourd’hui comme une figure <br/>majeure du rap moderne. Il est également à la tête du <br/>label Opium, qui regroupe plusieurs artistes de la <br/> nouvelle génération.</p>
 
-  <div class="navig">
- 
-    <div class="retour">
-      <a href="index.html" class="text-navig"><h2>RETOUR</h2></a>
-    </div>
-
-    <div class="suite">
-      <a href="albums.html" class="text-navig"><h2>SUITE</h2></a>
-    </div>
-  
-  </div>
+<div class="navig">
+  <a href="index.html" class="btn-navig">← RETOUR</a>
+  <a href="album.html" class="btn-navig">SUITE →</a>
+</div>
 
 <audio id="audio-touche1" src="CARTII.mp3" preload="auto"></audio>
 <audio id="audio-touche2" src="what.mp3" preload="auto"></audio>
