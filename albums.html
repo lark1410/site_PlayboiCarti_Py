@@ -369,8 +369,17 @@ nav a {
 
     
   <script src="sound-shortcuts.js"></script>
-
     
+<script>
+window.addEventListener('keydown', (rencontre) => {
+  if (rencontre.key === 'ArrowLeft') {
+    window.location.href = 'biographie.html';
+  }
+  if (rencontre.key === 'ArrowRight') {
+    window.location.href = 'opium.html';
+  }
+});
+</script>
   </body>
 
 </html>
