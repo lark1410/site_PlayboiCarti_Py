@@ -154,6 +154,99 @@ nav a {
       justify-items: center;
       text-align: center;
     }
+
+#param-logo {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  z-index: 2000;
+  transition: transform 0.3s ease;
+}
+
+#param-logo:hover {
+  transform: rotate(45deg);
+  text-shadow: 0 0 10px #D12600;
+}
+
+#param-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  transition: opacity 0.3s ease;
+}
+
+#param-menu.hidden {
+  display: none;
+}
+
+.menu-contenu {
+  background-color: #0d0d0d;
+  border: 2px solid #D12600;
+  border-radius: 10px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  color: white;
+  font-family: 'Times', sans-serif;
+  position: relative;
+  box-shadow: 0 0 20px rgba(209, 38, 0, 0.4);
+}
+
+#menu-fermer {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  color: gray;
+}
+
+#menu-fermer:hover {
+  color: #D12600;
+}
+
+.menu-contenu h2 {
+  text-align: center;
+  color: #D12600;
+  margin-top: 0;
+}
+
+.section-menu {
+  margin-top: 25px;
+  border-bottom: 1px dashed #333;
+  padding-bottom: 15px;
+}
+
+.section-menu h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.section-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-menu li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+#volume-slider {
+  width: 100%;
+  accent-color: #D12600;
+}
     
 @media (max-width: 768px) {
 
@@ -208,6 +301,29 @@ nav a {
             <li><a href="vamp-test.html">TEST VAMP</a></li>
         </ul>
     </nav>
+  <div id="param-logo">⚙️</div>
+
+<div id="param-menu" class="hidden">
+  <div class="menu-contenu">
+    <span id="menu-fermer">&times;</span>
+    <h2>PARAMÈTRES</h2>
+    
+    <div class="section-menu">
+      <h3>Volume Général</h3>
+      <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+    </div>
+
+    <div class="section-menu">
+      <h3>Raccourcis Clavier</h3>
+      <ul>
+        <li><strong>C</strong> : Jouer le son Carti</li>
+        <li><strong>F</strong> : Jouer le son What</li>
+        <li><strong>S</strong> : Jouer le son Seyuh</li>
+        <li><strong>← / →</strong> : Changer de page</li>
+      </ul>
+    </div>
+  </div>
+</div>
   
   <h1>PLAYBOI CARTI - OPIUM </h1>
 
@@ -248,6 +364,41 @@ nav a {
 <audio id="audio-touche2" src="what.mp3" preload="auto"></audio>
 <audio id="audio-touche3" src="seyuh.mp3" preload="auto"></audio>
 <script src="sound-shortcuts.js"></script>
+
+<script>
+const paramLogo = document.getElementById('param-logo');
+const paramMenu = document.getElementById('param-menu');
+const menuFermer = document.getElementById('menu-fermer');
+const volumeSlider = document.getElementById('volume-slider');
+
+
+paramLogo.addEventListener('click', () => {
+  paramMenu.classList.remove('hidden');
+});
+
+
+menuFermer.addEventListener('click', () => {
+  paramMenu.classList.add('hidden');
+});
+
+
+paramMenu.addEventListener('click', (e) => {
+  if (e.target === paramMenu) {
+    paramMenu.classList.add('hidden');
+  }
+});
+
+
+volumeSlider.addEventListener('input', (e) => {
+  const volumeValue = e.target.value;
+ 
+  const tousLesAudios = document.querySelectorAll('audio');
+  tousLesAudios.forEach(audio => {
+    audio.volume = volumeValue;
+  });
+});
+</script>
+  
 </body>
   
 </html>
