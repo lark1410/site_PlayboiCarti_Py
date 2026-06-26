@@ -269,6 +269,53 @@ window.addEventListener('keydown', (rencontre) => {
    }
 });
 </script>
+
+<script>
+  const paramLogo = document.getElementById('param-logo');
+const paramMenu = document.getElementById('param-menu');
+const menuFermer = document.getElementById('menu-fermer');
+const volumeSlider = document.getElementById('volume-slider');
+
+
+const volumeSauvegarde = localStorage.getItem('volumeGeneral');
+if (volumeSauvegarde !== null) {
+  volumeSlider.value = volumeSauvegarde; 
+ 
+  document.querySelectorAll('audio').forEach(audio => {
+    audio.volume = volumeSauvegarde;
+  });
+}
+
+
+paramLogo.addEventListener('click', () => {
+  paramMenu.classList.remove('hidden');
+});
+
+
+menuFermer.addEventListener('click', () => {
+  paramMenu.classList.add('hidden');
+});
+
+
+paramMenu.addEventListener('click', (e) => {
+  if (e.target === paramMenu) {
+    paramMenu.classList.add('hidden');
+  }
+});
+
+
+volumeSlider.addEventListener('input', (e) => {
+  const volumeValue = e.target.value;
+  
+  
+  document.querySelectorAll('audio').forEach(audio => {
+    audio.volume = volumeValue;
+  });
+  
+  
+  localStorage.setItem('volumeGeneral', volumeValue);
+});
+</script>
    
 </body>
 </html>
