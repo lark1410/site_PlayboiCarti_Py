@@ -226,5 +226,17 @@ nav a {
 <audio id="audio-touche2" src="what.mp3" preload="auto"></audio>
 <audio id="audio-touche3" src="seyuh.mp3" preload="auto"></audio>
 <script src="sound-shortcuts.js"></script>
+
+<script>
+window.addEventListener('keydown', (rencontre) => {
+  if (rencontre.key === 'ArrowLeft') {
+    window.location.href = 'albums.html';
+  }
+  if (rencontre.key === 'ArrowRight') {
+    window.location.href = 'vamp-test.html';
+  }
+});
+</script>
+    
   </body>
 </html>
