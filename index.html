@@ -366,10 +366,20 @@ nav a {
 <script src="sound-shortcuts.js"></script>
 
 <script>
-const paramLogo = document.getElementById('param-logo');
+  const paramLogo = document.getElementById('param-logo');
 const paramMenu = document.getElementById('param-menu');
 const menuFermer = document.getElementById('menu-fermer');
 const volumeSlider = document.getElementById('volume-slider');
+
+
+const volumeSauvegarde = localStorage.getItem('volumeGeneral');
+if (volumeSauvegarde !== null) {
+  volumeSlider.value = volumeSauvegarde; 
+ 
+  document.querySelectorAll('audio').forEach(audio => {
+    audio.volume = volumeSauvegarde;
+  });
+}
 
 
 paramLogo.addEventListener('click', () => {
@@ -391,11 +401,14 @@ paramMenu.addEventListener('click', (e) => {
 
 volumeSlider.addEventListener('input', (e) => {
   const volumeValue = e.target.value;
- 
-  const tousLesAudios = document.querySelectorAll('audio');
-  tousLesAudios.forEach(audio => {
+  
+  
+  document.querySelectorAll('audio').forEach(audio => {
     audio.volume = volumeValue;
   });
+  
+  
+  localStorage.setItem('volumeGeneral', volumeValue);
 });
 </script>
   
