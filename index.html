@@ -411,6 +411,15 @@ volumeSlider.addEventListener('input', (e) => {
   localStorage.setItem('volumeGeneral', volumeValue);
 });
 </script>
+
+<script>
+window.addEventListener('keydown', (rencontre) => {
+  
+  if (rencontre.key === 'ArrowRight') {
+    window.location.href = 'biographie.html';
+  }
+});
+</script>
   
 </body>
   
