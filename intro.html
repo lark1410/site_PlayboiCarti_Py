@@ -150,6 +150,42 @@ nav a {
   accent-color: #D12600;
 }
 
+
+.navig {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.btn-navig {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Times', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #0d0d0d;
+  border: 2px solid #D12600;
+  padding: 12px 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(209, 38, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+.btn-navig:hover {
+  background-color: #D12600;
+  color: black;
+  box-shadow: 0 0 25px #D12600;
+  transform: translateY(-3px);
+  cursor: pointer;
+}
+
+.btn-navig:active {
+  transform: translateY(1px);
+}
+      
 @media (max-width: 768px) {
       body {
     background-attachment: scroll !important;
